@@ -62,7 +62,7 @@ export default function RoomPage() {
 
     // Initialize socket connection once
     if (!socket) {
-      socket = io('http://localhost:4000'); // Assumes server at same origin, adjust if needed
+      socket = io(process.env.NEXT_PUBLIC_API_URL);
     }
 
     // Fetch room data
@@ -84,7 +84,7 @@ export default function RoomPage() {
       });
 
     // Fetch old messages
-    axios.get(`http://localhost:4000/api/messages?roomId=${code}`)
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/messages?roomId=${code}`)
       .then(res => {
         // Separate messages and files
         const msgs = res.data.messages.filter(m => m.type !== 'file');
@@ -188,7 +188,7 @@ export default function RoomPage() {
       }
 
       // Upload to your API endpoint that handles file uploads
-      const res = await axios.post('http://localhost:4000/api/upload', formData, {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
