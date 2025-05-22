@@ -8,15 +8,31 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "type": "module",
   "dependencies": {
+    "@azure/storage-blob": "^12.27.0",
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dompurify": "^3.2.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "firebase": "^11.8.0",
+    "firebase-admin": "^13.4.0",
+    "formidable": "^3.5.4",
+    "mongoose": "^8.15.0",
+    "multer": "^1.4.5-lts.2",
+    "next": "15.3.2",
+    "node-cron": "^4.0.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.2"
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/react-dom": "^19",
+    "typescript": "^5"
   }
 }
