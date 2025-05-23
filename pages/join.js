@@ -19,14 +19,14 @@ export default function JoinPage() {
   }, []);
 
   useEffect(() => {
-    fetch('/api/room/list')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/room/list`)
       .then(res => res.json())
       .then(data => setRooms(data.rooms || []));
   }, []);
 
   useEffect(() => {
     if (roomcode.trim().length === 6) {
-      fetch(`/api/room/get?code=${roomcode.trim().toUpperCase()}`)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/room/get?code=${roomcode.trim().toUpperCase()}`)
         .then(res => res.json())
         .then(data => setRoomInfo(data.room || null))
         .catch(() => setRoomInfo(null));
@@ -45,7 +45,7 @@ export default function JoinPage() {
       return;
     }
     try {
-      const res = await fetch('/api/room/join', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/room/join`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: trimmedUsername, roomcode: trimmedRoomcode, password }),

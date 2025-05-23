@@ -62,7 +62,7 @@ export default function RoomPage() {
 
     // Initialize socket connection once
     if (!socket) {
-      socket = io(process.env.NEXT_PUBLIC_API_URL);
+      socket = io("https://study-sphere-backend-lp6v.onrender.com");
     }
 
     // Fetch room data
@@ -84,7 +84,7 @@ export default function RoomPage() {
       });
 
     // Fetch old messages
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/messages?roomId=${code}`)
+    axios.get(`https://study-sphere-backend-lp6v.onrender.com/api/messages?roomId=${code}`)
       .then(res => {
         // Separate messages and files
         const msgs = res.data.messages.filter(m => m.type !== 'file');
@@ -188,7 +188,7 @@ export default function RoomPage() {
       }
 
       // Upload to your API endpoint that handles file uploads
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/upload`, formData, {
+      const res = await axios.post(`https://study-sphere-backend-lp6v.onrender.com/api/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
