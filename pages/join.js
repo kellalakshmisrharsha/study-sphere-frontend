@@ -19,14 +19,14 @@ export default function JoinPage() {
   }, []);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/room/list`)
+    fetch(`/api/room/list`)
       .then(res => res.json())
       .then(data => setRooms(data.rooms || []));
   }, []);
 
   useEffect(() => {
     if (roomcode.trim().length === 6) {
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/room/get?code=${roomcode.trim().toUpperCase()}`)
+      fetch(`/api/room/get?code=${roomcode.trim().toUpperCase()}`)
         .then(res => res.json())
         .then(data => setRoomInfo(data.room || null))
         .catch(() => setRoomInfo(null));
