@@ -20,7 +20,7 @@ const NavBar = () => {
       boxShadow: '0 2px 8px #667eea33', marginBottom: 32, borderRadius: 0
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-        <img src="/logo.png" alt="Logo" style={{ width: 40, height: 40, borderRadius: '50%' }} />
+        <img src="/logo.jpg" alt="Logo" style={{ width: 40, height: 40, borderRadius: '50%' }} />
         <Link href="/" style={{ color: '#fff', fontWeight: 700, fontSize: 24, textDecoration: 'none', letterSpacing: 1 }}>StudySphere</Link>
         <Link href="/join" style={{ color: '#fff', fontWeight: 500, fontSize: 18, textDecoration: 'none' }}>Join Room</Link>
         <Link href="/create" style={{ color: '#fff', fontWeight: 500, fontSize: 18, textDecoration: 'none' }}>Create Room</Link>
